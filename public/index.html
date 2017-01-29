@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Share to Wear</title>
+    <style media="screen">
+      body {
+        font-family: Roboto, Arial, sans-serif;
+        background: #ECEFF1;
+        color: rgba(0,0,0,0.87);
+      }
+
+      a {
+        color: rgb(3,155,229);
+      }
+
+      #message {
+        max-width: 400px;
+        margin: 40px auto;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
+        border-radius: 2px;
+        background: white;
+        padding: 16px 24px;
+      }
+
+      #message h1 {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0 0 16px;
+      }
+
+      #message p {
+        font-weight: 300;
+        line-height: 150%;
+      }
+
+      #message ul {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      #message li a {
+        display: inline-block;
+        padding: 8px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        background: rgb(3,155,229);
+        color: white;
+        border: 1px solid rgb(3,155,229);
+        border-radius: 3px;
+        font-size: 14px;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      }
+      .tag-line{
+        color: DeepSkyBlue;
+      }
+      .link{
+        color: white;
+      }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- <div id="message">
+      <h1>Welcome to Firebase Hosting</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <ul>
+        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
+      </ul>
+    </div> -->
+
+    <div class = "container-fluid">
+      <div class="row vertical-center-row">
+        <div class="text-center col-lg-12">
+          <img src="logo.png" class="img-rounded" alt="Logo" width="1000" height="236">
+          <h1 class = "tag-line"> We're building one big closet. For you and by you. </h1>
+          <div class = "btn-group-vertical">
+            <button type="button" class="btn btn-primary btn-lg" style = "margin-top: 10px">
+              Sign Up with Facebook!
+              <div class="fb-login-button" data-max-rows="1" data-size="icon" data-show-faces="false" data-auto-logout-link="false" onlogin = "checkLoginState()" style = "margin-left: 10px"></div>
+            </button>
+            <button type="button" class="btn btn-primary btn-lg" style = "margin-top: 10px" onclick = "redirect">
+              Login with Facebook!
+              <div class="fb-login-button" data-max-rows="1" data-size="icon" data-show-faces="false" data-auto-logout-link="false" onlogin = "checkLoginState()" style = "margin-left: 10px"></div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+      <div id = 'proceed' class = 'text-center col-lg-12'></div>
+    </div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB9ce5PTxi0hbmruyksz2KAOGmhGEns9cU",
+      authDomain: "sharetowear-4f4f8.firebaseapp.com",
+      databaseURL: "https://sharetowear-4f4f8.firebaseio.com",
+      storageBucket: "sharetowear-4f4f8.appspot.com",
+      messagingSenderId: "837469442182"
+    };
+      firebase.initializeApp(config);
+    </script>
+
+    <script>
+    function redirect(){
+      console.log('in redirect');
+      var stateObj = {state: 'homepage'};
+      history.pushState(stateObj, "", "homepage"); //changes url
+      location.reload();
+    }
+    </script>
+
+<script src="scripts/login.js"></script>
+  </body>
+</html>

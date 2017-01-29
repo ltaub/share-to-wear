@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Share to Wear</title>
+    <style media="screen">
+      body {
+        font-family: Roboto, Arial, sans-serif;
+        background: #ECEFF1;
+        color: rgba(0,0,0,0.87);
+      }
+
+      a {
+        color: rgb(3,155,229);
+      }
+      .tag-line{
+        color: DeepSkyBlue;
+      }
+      .link{
+        color: white;
+      }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class = "container-fluid">
+      <div class="row vertical-center-row">
+        <div class="text-center col-lg-12">
+          <img src="logo.png" class="img-rounded" alt="Logo" width="1000" height="236">
+          <h1 class = "tag-line"> We're building one big closet. For you and by you. </h1>
+          <div class = "btn-group-vertical">
+            <button type="button" class="btn btn-primary btn-lg" style = "margin-top: 10px" onclick = "redirect()">Back to Login</button>
+
+          </div>
+        </div>
+      </div>
+      <div id = 'proceed' class = 'text-center col-lg-12'></div>
+    </div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB9ce5PTxi0hbmruyksz2KAOGmhGEns9cU",
+      authDomain: "sharetowear-4f4f8.firebaseapp.com",
+      databaseURL: "https://sharetowear-4f4f8.firebaseio.com",
+      storageBucket: "sharetowear-4f4f8.appspot.com",
+      messagingSenderId: "837469442182"
+    };
+      firebase.initializeApp(config);
+    </script>
+
+    <script>
+    function redirect(){
+      console.log('in redirect');
+      var stateObj = {state: 'homepage'};
+      history.pushState(stateObj, "", "index.html"); //changes url
+      location.reload();
+    }
+    </script>
+
+<script src="scripts/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "dresses":{
+      ".read": true,
+      ".write": true
+    }
+  }
+}
